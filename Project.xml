@@ -61,6 +61,7 @@
 		<library name="weeks"    preload="false" />
 	</section>
 	
+	<assets path="mobile" rename="assets/mobile" if="mobile" />
 	<assets path="assets/songs"    library="songs"    exclude="*.ogg" if="web"/>
 	<assets path="assets/songs"    library="songs"    exclude="*.mp3" unless="web"/>
 	<assets path="assets/shared"   library="shared"   exclude="*.ogg" if="web"/>
@@ -98,6 +99,7 @@
 	<haxelib name="polymod"/>
 	<haxelib name="discord_rpc" if="desktop"/>
 	<haxelib name="hxCodec" if="desktop || android" />
+	<haxelib name="extension-androidtools" if="android" />
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
 	<!-- <haxelib name="markdown" /> -->
@@ -137,6 +139,9 @@
 
 	<!--Enable this for Nape release builds for a serious peformance improvement-->
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
+	
+	<!--Make's-the-Game-use-less-ram-->
+	<haxedef name="HXCPP_GC_BIG_BLOCKS" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
